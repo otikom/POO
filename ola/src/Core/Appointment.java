@@ -16,11 +16,16 @@ public class Appointment {
     
     static Appointment crearAppointment(Doctor doctor,Patient patient){
         return new Appointment(doctor,patient);
+        
     }
 
     public Appointment(Doctor doctor, Patient patient) {
         this.doctor = doctor;
         this.patient = patient;
+        patient.getAppointments().add(this); //aqui habia un peo ve
+        doctor.getAppointments().add(this);
     }
-    
+    public Doctor geDoctor(){
+        return this.doctor;
+    }
 }

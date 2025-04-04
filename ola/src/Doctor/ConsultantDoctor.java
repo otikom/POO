@@ -5,6 +5,7 @@
 package Doctor;
 
 
+import Core.Appointment;
 import Core.Patient;
 import Core.Team;
 import java.util.ArrayList;
@@ -39,4 +40,10 @@ public class ConsultantDoctor extends Doctor {
         return id;
     }
     
+    @Override
+    public ArrayList<Appointment> getAppointments() {
+        return apointments;
+    }
+    
+
 }

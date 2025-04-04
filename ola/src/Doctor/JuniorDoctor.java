@@ -4,6 +4,7 @@
  */
 package Doctor;
 
+import Core.Appointment;
 import Core.Patient;
 import java.util.ArrayList;
 
@@ -31,4 +32,9 @@ public class JuniorDoctor extends Doctor {
     public int getId() {
         return id;
     }
+    @Override
+    public ArrayList<Appointment> getAppointments() {
+        return apointments;
+    }
 }
+//onichan

@@ -94,7 +94,7 @@ public class Main {
         hospital.numberPatientsTeam();
 
         System.out.println("\nList of appointments in the system:");
-        //hospital.relationAppoiments();
+        hospital.relationAppoiments();
     }
     
 }

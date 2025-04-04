@@ -28,7 +28,9 @@ public class Patient {
         this.doctors = new ArrayList<>();
         this.appointments = new ArrayList<>();
     }
-
+    public ArrayList<Appointment> getAppointments(){
+        return appointments;
+    }
     public Team getTeam() {
         return team;
     }

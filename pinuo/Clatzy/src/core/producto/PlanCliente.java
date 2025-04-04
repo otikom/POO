@@ -4,10 +4,21 @@
  */
 package core.producto;
 
+import core.persona.Cliente;
+import java.time.LocalDate;
+
 /**
  *
  * @author Alexander Sanguino
  */
-public class PlanCliente {
+public class PlanCliente extends Producto {
+    private Cliente cliente;
+    private Plan plan;
+
+    public PlanCliente(Cliente cliente, Plan plan, int id, String nombre, LocalDate fechainicio, LocalDate fechafin, Boolean estadoActivo, float valor) {
+        super(id, nombre, fechainicio, fechafin, estadoActivo, valor);
+        this.cliente = cliente;
+        this.plan = plan;
+    }
     
 }

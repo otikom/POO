@@ -36,6 +36,8 @@ public abstract class Doctor {
     public int getId() {
         return id;
     }
-    
+    public ArrayList<Appointment> getAppointments() {
+        return apointments;
+    }
     
 }

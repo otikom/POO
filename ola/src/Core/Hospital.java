@@ -45,6 +45,7 @@ public class Hospital {
           Team pteam=patient.getTeam();
           Doctor doctor=pteam.getDoctor(pteam.getId()+idDoctor);
           Appointment appointment= Appointment.crearAppointment(doctor, patient);
+        
       }
     public Team getTeam(int idTeam){
         for(Team team:teams){
@@ -85,6 +86,20 @@ public class Hospital {
                 int n= team.getPatients().size();
                 System.out.println("Team "+team.getId()+" has "+n+" patients");
             
+        }
+    }
+ 
+    public void relationAppoiments(){
+       int c=0;
+        for(Ward ward:wards){
+            for(Patient patient:ward.getPatients()){
+                ArrayList<Appointment> sitas = patient.getAppointments();
+                    c=sitas.size();                    
+                System.out.println("Patient "+patient.getId()+" has "+c+" appointments ");
+                for(Appointment appointment:sitas){
+                    System.out.println("Patient "+patient.getId()+" has an "+" appointment with the doctor "+appointment.geDoctor().getId());
+                }
+                }            
         }
     }
 }

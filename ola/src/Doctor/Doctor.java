@@ -4,10 +4,25 @@
  */
 package Doctor;
 
+import Core.Appointment;
+import Core.Patient;
+import Core.Team;
+import java.util.ArrayList;
+
 /**
  *
  * @author Alexander Sanguino
  */
-public class Doctor {
+public abstract class Doctor {
+    protected int id;
+    protected Team team;
+    protected ArrayList<Appointment> apointments;
+    protected Patient patients;
+
+    public Doctor() {
+    }
+    
+    
+    
     
 }

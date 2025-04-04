@@ -37,7 +37,6 @@ public class Main {
         hospital.addWard(10);
 
         hospital.addPatient(hospital.getWard(10), hospital.getTeam(0), 0 + 10); // Receives the Ward, the Team and the Patient id.
-        System.out.println("acá ve: "+hospital.getPatient(10).getTeam().getId());
         hospital.assignPatientDoctor(hospital.getPatient(0 + 10), 1); // Receives the Patient and the Doctor id is the Patient Team id plus the second function parameter (int).
         hospital.assignPatientDoctor(hospital.getPatient(0 + 10), 2);
         hospital.assignAppoiment(hospital.getPatient(0 + 10), 2); // The parameter values are the same as assignPatientDoctor.

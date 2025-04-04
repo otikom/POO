@@ -16,6 +16,7 @@ public class Ward {
 
     public Ward(int id) {
         this.id=id;
+        this.patients = new ArrayList<>();
     }
     
     public boolean addPatient(Patient patient){
@@ -28,6 +29,10 @@ public class Ward {
 
     public ArrayList<Patient> getPatients() {
         return patients;
+    }
+
+    public int getId() {
+        return id;
     }
     
 }

@@ -23,6 +23,10 @@ public class Patient {
     }
     public Patient(int id,Team team,Ward ward) {
         this.id = id;
+        this.team=team;
+        this.ward=ward;
+        this.doctors = new ArrayList<>();
+        this.appointments = new ArrayList<>();
     }
 
     public Team getTeam() {
@@ -38,6 +42,10 @@ public class Patient {
 
     public int getId() {
         return id;
+    }
+
+    public ArrayList<Doctor> getDoctors() {
+        return doctors;
     }
         
 }

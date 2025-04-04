@@ -46,8 +46,13 @@ public class Hospital {
           Doctor doctor=pteam.getDoctor(pteam.getId()+idDoctor);
           Appointment appointment= Appointment.crearAppointment(doctor, patient);
       }
-    public Team getTeam(int index){
-        return teams.get(index);
+    public Team getTeam(int idTeam){
+        for(Team team:teams){
+            if(team.getId()==idTeam){
+                return team;
+            }
+        }
+        return null;
     }
     public Patient getPatient(int id){
         for(Ward ward:wards){
@@ -59,7 +64,27 @@ public class Hospital {
         }
         return null;
     }
-    public Ward getWard(int index){
-        return wards.get(index);
+    public Ward getWard(int idWard){
+        for(Ward ward:wards){
+            if(ward.getId()==idWard){
+                return ward;
+            }
+        }
+        return null;
+    }
+    public void numberDoctorsPatient(){
+        for(Ward ward:wards){
+            for(Patient patient:ward.getPatients()){
+                int n= patient.getDoctors().size();
+                System.out.println("Patient "+patient.getId()+" has "+n+" doctors");
+            }
+        }
+    }
+    public void numberPatientsTeam(){
+        for(Team team:teams){
+                int n= team.getPatients().size();
+                System.out.println("Team "+team.getId()+" has "+n+" patients");
+            
+        }
     }
 }

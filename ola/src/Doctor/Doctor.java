@@ -21,6 +21,8 @@ public abstract class Doctor {
 
     public Doctor(int id){
         this.id=id;
+        this.apointments = new ArrayList<>();
+        this.patients = new ArrayList<>();
     }
     
     public boolean addPatient(Patient patient){
@@ -29,6 +31,10 @@ public abstract class Doctor {
             return true;
         }
         return false;
+    }
+
+    public int getId() {
+        return id;
     }
     
     

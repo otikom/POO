@@ -4,7 +4,7 @@
  */
 package Doctor;
 
-import Core.Appointment;
+
 import Core.Patient;
 import Core.Team;
 import java.util.ArrayList;
@@ -18,11 +18,25 @@ public class ConsultantDoctor extends Doctor {
 
     public ConsultantDoctor(int id) {
         super(id);
+        this.apointments = new ArrayList<>();
+        this.patients = new ArrayList<>();
     }
 
     public void setLeaderOf(Team leaderOf) {
         this.leaderOf = leaderOf;
     }
- 
+    @Override
+    public boolean addPatient(Patient patient){
+        if(!patients.contains(patient)){
+            patients.add(patient);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
     
 }

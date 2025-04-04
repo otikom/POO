@@ -4,10 +4,19 @@
  */
 package Core;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Alexander Sanguino
  */
 public class Hospital {
+    private ArrayList<Team> teams;
+    private ArrayList<Ward> wards;
+
+    public Hospital(ArrayList<Team> teams, ArrayList<Ward> wards) {
+        this.teams = teams;
+        this.wards = wards;
+    }
     
 }

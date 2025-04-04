@@ -4,10 +4,13 @@
  */
 package Core;
 
+import Doctor.Doctor;
+
 /**
  *
  * @author Alexander Sanguino
  */
 public class Appointment {
-    
+    private Doctor doctor;
+    private Patient patient;
 }

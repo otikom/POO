@@ -26,4 +26,20 @@ public class Instructor extends Persona {
         }
         return false;
     }
+    @Override
+        public String getNombre() {
+        return nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }

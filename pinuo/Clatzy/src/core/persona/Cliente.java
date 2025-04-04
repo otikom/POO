@@ -18,6 +18,7 @@ public class Cliente {
     private ArrayList<Producto> productos;
 
     public Cliente() {
+        super();
         this.planes = new ArrayList<>();
         this.productos = new ArrayList<>();
     }
@@ -34,5 +35,21 @@ public class Cliente {
             return true;
         }
         return false;
+    }
+    
+        public String getNombre() {
+        return nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

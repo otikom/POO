@@ -4,6 +4,10 @@
  */
 package main;
 
+import core.*;
+import java.time.LocalDate;
+
+
 /**
  *
  * @author Alexander Sanguino
@@ -19,6 +23,7 @@ public class Main {
         clatzy.addInstructor("Gustavo Morales", "123456783", "3000000005", "gmorales@uninorte.edu.co");
         clatzy.addInstructor("Maria Barrios", "123456784", "3000000006", "mbarrios@uninorte.edu.co");
         clatzy.addInstructor("Carolina Alvarado", "123456785", "3000000007", "calvarado@uninorte.edu.co");
+        
 
         LocalDate date = LocalDate.of(2023, 4, 22);
 
@@ -29,24 +34,32 @@ public class Main {
         clatzy.addCurso(4, "Introduccion a programacion web", date, 150_000, clatzy.getInstructor(2));
         clatzy.addCurso(5, "Introduccion a programacion movil", date, 150_000, clatzy.getInstructor(5));
         clatzy.addCurso(6, "Gerencia de proyectos", date, 150_000, clatzy.getInstructor(6));
-
+        
+        /*for (int i = 0; i < 7; i++) {
+            
+        System.out.println(clatzy.getCurso(i).getNombre());
+        }*/
+        
         clatzy.addPlan("Plan ilimitado anual", date, 2_000_000, Float.MAX_VALUE);
         clatzy.addPlan("Plan anual igual o menor a 100.000", date, 500_000, 100_000);
-
+        /*for (int i = 0; i < 2; i++) {
+            
+        System.out.println(clatzy.getPlan(i).getNombre());
+        }*/
         clatzy.addCliente("Pedro Perez", "223456789", "3000000001", "pwightman@uninorte.edu.co");
         clatzy.addCliente("Miguel Jimenez", "223456780", "3000000002", "majimeno@uninorte.edu.co");
         clatzy.addCliente("Augusto Belalcazar", "223456781", "3000000003", "augustosalazar@uninorte.edu.co");
         clatzy.addCliente("Jose Camacho", "223456782", "3000000004", "jcapacho@uninorte.edu.co");
         clatzy.addCliente("Gustavo Moradas", "223456783", "3000000005", "gmorales@uninorte.edu.co");
 
-        clatzy.comprarPlan(clatzy.getCliente(0), clatzy.getPlan(1), date); // El valor del plancliente es el valor actual del plan
-        clatzy.comprarPlan(clatzy.getCliente(0), clatzy.getPlan(0), date); // Cliente ya tiene plan, debe fallar
+       clatzy.comprarPlan(clatzy.getCliente(0), clatzy.getPlan(1), date); // El valor del plancliente es el valor actual del plan
+       clatzy.comprarPlan(clatzy.getCliente(0), clatzy.getPlan(0), date); // Cliente ya tiene plan, debe fallar
 
-        clatzy.getCliente(0).getPlan(0).setEstadoActivo(false); // El cliente desactiva su plan actual
+       clatzy.getCliente(0).getPlan(0).setEstadoActivo(false); // El cliente desactiva su plan actual
 
-        clatzy.comprarPlan(clatzy.getCliente(0), clatzy.getPlan(0), date); // El cliente ha adquirido un plan nuevo y no tiene planes activos
-        clatzy.comprarPlan(clatzy.getCliente(1), clatzy.getPlan(1), date);
-        clatzy.comprarPlan(clatzy.getCliente(4), clatzy.getPlan(0), date);
+       clatzy.comprarPlan(clatzy.getCliente(0), clatzy.getPlan(0), date); // El cliente ha adquirido un plan nuevo y no tiene planes activos
+       clatzy.comprarPlan(clatzy.getCliente(1), clatzy.getPlan(1), date);
+       clatzy.comprarPlan(clatzy.getCliente(4), clatzy.getPlan(0), date);
 
         // Si el cliente tiene plan, se almacena el valor de ProductoCliente como $0 pues no pago en efectivo por ese curso
         clatzy.comprarCurso(clatzy.getCliente(0), clatzy.getCurso(3), date);
@@ -63,7 +76,7 @@ public class Main {
         clatzy.comprarCurso(clatzy.getCliente(0), clatzy.getCurso(3), date); // Debe fallar pues el cliente ya tiene el curso
 
         // Dado que el usuario tiene plan y este incluye el curso, se debe comprar sin colocar costo y mostrar mensaje de informacion
-        clatzy.comprarCurso(clatzy.getCliente(0), clatzy.getCurso(2), date, 100_000);
+        /*clatzy.comprarCurso(clatzy.getCliente(0), clatzy.getCurso(2), date, 100_000);
         clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(5), date, 150_000); // Como su plan no cubre ese curso, puede comprar la clase
         clatzy.comprarCurso(clatzy.getCliente(2), clatzy.getCurso(1), date, 100_000);
         clatzy.comprarCurso(clatzy.getCliente(3), clatzy.getCurso(1), date, 100_000);
@@ -73,14 +86,14 @@ public class Main {
         clatzy.comprarCurso(clatzy.getCliente(4), clatzy.getCurso(6), date, 150_000);
         clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(2), date);
         clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(4), date, 150_000);
-        clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(6), date, 150_000);
+        clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(6), date, 150_000);*/
 
         System.out.println("\n----------------------------------------");
-        System.out.println("El cliente que mas ha pagado en efectivo por cursos es " + clatzy.getClienteMayorIngreso());
+        //System.out.println("El cliente que mas ha pagado en efectivo por cursos es " + clatzy.getClienteMayorIngreso());
         System.out.println("----------------------------------------\n");
 
         System.out.println("------------- BONIFICACION -------------");
-        clatzy.listAll();
+        //clatzy.listAll();
     }
     
 }

@@ -28,5 +28,33 @@ public abstract class Producto {
         this.valor = valor;
     }
 
+    public void setEstadoActivo(Boolean estadoActivo) {
+        this.estadoActivo = estadoActivo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public LocalDate getFechainicio() {
+        return fechainicio;
+    }
+
+    public LocalDate getFechafin() {
+        return fechafin;
+    }
+
+    public Boolean getEstadoActivo() {
+        return estadoActivo;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
     
 }

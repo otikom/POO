@@ -35,4 +35,35 @@ public class Curso extends Producto{
         }
         return false;
     }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public LocalDate getFechainicio() {
+        return fechainicio;
+    }
+
+    @Override
+    public LocalDate getFechafin() {
+        return fechafin;
+    }
+
+    @Override
+    public Boolean getEstadoActivo() {
+        return estadoActivo;
+    }
+
+    @Override
+    public float getValor() {
+        return valor;
+    }
+    
 }

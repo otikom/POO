@@ -20,5 +20,22 @@ public class PlanCliente extends Producto {
         this.cliente = cliente;
         this.plan = plan;
     }
-    
+    @Override
+        public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     *
+     * @param estadoActivo
+     */
+    @Override
+        public void setEstadoActivo(Boolean estadoActivo) {
+        this.estadoActivo = estadoActivo;
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+        
 }

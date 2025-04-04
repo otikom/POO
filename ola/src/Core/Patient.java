@@ -17,13 +17,22 @@ public class Patient {
      private Ward ward;
      private ArrayList<Appointment> appointments;
      private ArrayList<Doctor> doctors;
-
-    public Patient(int id, Team team, Ward ward, ArrayList<Appointment> appointments, ArrayList<Doctor> doctors) {
-        this.id = id;
-        this.team = team;
-        this.ward = ward;
-        this.appointments = appointments;
-        this.doctors = doctors;
-    }
      
+    static Patient crearPatient(int id,Team team,Ward ward){
+        return new Patient(id,team,ward);
+    }
+    public Patient(int id,Team team,Ward ward) {
+        this.id = id;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+        public boolean addDoctor(Doctor doctor){
+        if(!doctors.contains(doctor)){
+            doctors.add(doctor);
+            return true;
+        }
+        return false;
+    }
 }

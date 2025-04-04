@@ -6,6 +6,7 @@ package Core;
 
 import Doctor.ConsultantDoctor;
 import Doctor.Doctor;
+import Doctor.JuniorDoctor;
 import java.util.ArrayList;
 
 /**
@@ -18,11 +19,28 @@ public class Team {
     private ArrayList<Doctor> doctors;
     private ArrayList<Patient> patients;
 
-    public Team(int id, ConsultantDoctor teamLeader, ArrayList<Doctor> doctors, ArrayList<Patient> patients) {
+    public Team(int id) {
         this.id = id;
-        this.teamLeader = teamLeader;
-        this.doctors = doctors;
-        this.patients = patients;
     }
-    
+    public void addJuniorDoctor(int id){
+        doctors.add(new JuniorDoctor(id));
+    }
+    public void createConsultant(int id){
+        this.teamLeader= new ConsultantDoctor(id);
+        teamLeader.setLeaderOf(this);
+    }
+    public boolean addPatient(Patient patient){
+        if(!patients.contains(patient)){
+            patients.add(patient);
+            return true;
+        }
+        return false;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public Doctor getDoctor(int index){
+        return doctors.get(index);
+    }
 }

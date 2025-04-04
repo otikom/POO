@@ -17,12 +17,19 @@ public abstract class Doctor {
     protected int id;
     protected Team team;
     protected ArrayList<Appointment> apointments;
-    protected Patient patients;
+    protected ArrayList<Patient> patients;
 
-    public Doctor() {
+    public Doctor(int id){
+        this.id=id;
     }
     
-    
+    public boolean addPatient(Patient patient){
+        if(!patients.contains(patient)){
+            patients.add(patient);
+            return true;
+        }
+        return false;
+    }
     
     
 }

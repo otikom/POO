@@ -4,6 +4,9 @@
  */
 package main;
 
+import Core.*;
+import Doctor.*;
+
 /**
  *
  * @author maria

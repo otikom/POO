@@ -14,8 +14,15 @@ public class Ward {
     private int id;
     private ArrayList<Patient> patients;
 
-    public Ward() {
+    public Ward(int id) {
+        this.id=id;
     }
     
-    
+    public boolean addPatient(Patient patient){
+        if(!patients.contains(patient)){
+            patients.add(patient);
+            return true;
+        }
+        return false;
+    }
 }

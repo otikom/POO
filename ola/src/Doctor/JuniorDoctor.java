@@ -10,10 +10,10 @@ import Core.Team;
  *
  * @author Alexander Sanguino
  */
-public class JuniorDoctor {
-
-    public JuniorDoctor(Team team,int jDId) {
-        
+public class JuniorDoctor extends Doctor {
+    
+    public JuniorDoctor(int id){
+        super(id);
     }
     
 }

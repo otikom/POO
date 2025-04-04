@@ -16,7 +16,12 @@ import java.util.ArrayList;
 public class ConsultantDoctor extends Doctor {
     private Team leaderOf;
 
-    public ConsultantDoctor() {
+    public ConsultantDoctor(int id) {
+        super(id);
+    }
+
+    public void setLeaderOf(Team leaderOf) {
+        this.leaderOf = leaderOf;
     }
  
     

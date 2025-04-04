@@ -4,10 +4,16 @@
  */
 package Doctor;
 
+import Core.Team;
+
 /**
  *
  * @author Alexander Sanguino
  */
 public class JuniorDoctor {
+
+    public JuniorDoctor(Team team,int jDId) {
+        
+    }
     
 }

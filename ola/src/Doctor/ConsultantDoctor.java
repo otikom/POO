@@ -4,10 +4,20 @@
  */
 package Doctor;
 
+import Core.Appointment;
+import Core.Patient;
+import Core.Team;
+import java.util.ArrayList;
+
 /**
  *
  * @author Alexander Sanguino
  */
-public class ConsultantDoctor {
+public class ConsultantDoctor extends Doctor {
+    private Team leaderOf;
+
+    public ConsultantDoctor() {
+    }
+ 
     
 }

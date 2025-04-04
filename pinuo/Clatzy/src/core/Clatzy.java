@@ -8,6 +8,7 @@ import core.persona.Cliente;
 import core.persona.Instructor;
 import core.producto.Curso;
 import core.producto.Plan;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -26,5 +27,21 @@ public class Clatzy {
         this.cursos = new ArrayList<>();
         this.clientes = new ArrayList<>();
     }
-     
+     public void addInstructor(String nombre, String cedula, String telefono, String email){
+        instructores.add(new Instructor(nombre,cedula,telefono,email));
+    }  
+    public void addCurso(int idCurso, String nombre, LocalDate fecha, float valor,Instructor instructor ){
+        cursos.add(new Curso(idCurso,nombre,fecha,null,true,valor));//DE DONDE CARAJOS SACAMOS LA OTRA FECHA
+    } 
+    public Instructor getInstructor(int idInstructor){
+        for(Instructor instructor:instructores){
+            if(instructor.getId()==idInstructor){
+                return instructor;
+            }
+        }
+        return null;
+    }
+    public void addPlan(String nombre,LocalDate fecha,float valor,float valorMax){
+        planes
+    }
 }

@@ -14,7 +14,9 @@ import java.util.ArrayList;
 public class Instructor extends Persona {
 
     private ArrayList<Curso> cursos;
-
+    /*static Instructor createInstructor(String nombre, String cedula, String telefono, String email){
+        return new Instructor(nombre,cedula,telefono,email);
+    }*/
     public Instructor(String nombre, String cedula, String telefono, String email) {
         super(nombre, cedula, telefono, email);
         this.cursos=new ArrayList<>();

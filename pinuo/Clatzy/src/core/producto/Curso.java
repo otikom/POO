@@ -5,17 +5,19 @@
 package core.producto;
 
 import core.persona.Instructor;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
  *
  * @author Alexander Sanguino
  */
-public class Curso {
+public class Curso extends Producto{
     private ArrayList<Instructor> instructores;
     private ArrayList<ProductoCliente> productosCliente;
 
-    public Curso() {
+    public Curso(int id, String nombre, LocalDate fechainicio, LocalDate fechafin, Boolean estadoActivo, float valor) {
+        super(id,nombre,fechainicio,fechafin,estadoActivo,valor);
         this.instructores = new ArrayList<>();
         this.productosCliente = new ArrayList<>();
     }

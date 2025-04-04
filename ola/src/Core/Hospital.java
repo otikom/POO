@@ -41,11 +41,23 @@ public class Hospital {
           doctor.addPatient(patient);
           patient.addDoctor(doctor);
       }
+      public void assignAppoiment(Patient patient,int idDoctor){
+          Team pteam=patient.getTeam();
+          Doctor doctor=pteam.getDoctor(pteam.getId()+idDoctor);
+          Appointment appointment= Appointment.crearAppointment(doctor, patient);
+      }
     public Team getTeam(int index){
         return teams.get(index);
     }
-    public Patient getPatient(int index){
-        return teams.get(index);
+    public Patient getPatient(int id){
+        for(Ward ward:wards){
+            for(Patient patient:ward.getPatients()){
+                if(patient.getId()==id){
+                    return patient;
+                }
+            }
+        }
+        return null;
     }
     public Ward getWard(int index){
         return wards.get(index);

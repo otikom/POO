@@ -13,4 +13,13 @@ import Doctor.Doctor;
 public class Appointment {
     private Doctor doctor;
     private Patient patient;
+    static Appointment crearAppointment(Doctor doctor,Patient patient){
+        return new Appointment(doctor,patient);
+    }
+
+    public Appointment(Doctor doctor, Patient patient) {
+        this.doctor = doctor;
+        this.patient = patient;
+    }
+    
 }

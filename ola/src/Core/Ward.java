@@ -25,4 +25,9 @@ public class Ward {
         }
         return false;
     }
+
+    public ArrayList<Patient> getPatients() {
+        return patients;
+    }
+    
 }

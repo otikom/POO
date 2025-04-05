@@ -74,21 +74,12 @@ public class Clatzy {
             System.out.println("Cliente " + cliente.getNombre() + " ya tiene un plan activo");
         }
     }
-    public void comprarCurso(Cliente cliente, Curso curso, LocalDate date) {
-        boolean cubrePlan = true;
-        for (PlanCliente planc : cliente.getPlanes()) {
-            if (planc.getEstadoActivo()) {
-                if(planc.getPlan().getValorMaximoCurso()<=curso.getValor()){
-                    cubrePlan=false;
-                }
-            }
-        }
-        
+    public void comprarCurso(Cliente cliente, Curso curso, LocalDate date) {     
         if(cliente.noTieneCurso(curso)){
-        if (cubrePlan) {
+        if (cliente.planCubreCurso(curso)) {
             ProductoCliente productocliente = new ProductoCliente(false, 0, cliente, curso,curso.getId(),curso.getNombre(),date,null,curso.getEstadoActivo(),0);
             cliente.addProducto(productocliente);
-            System.out.println("Cliente "+cliente.getNombre() + " registró exitosamente"+" el curso "+productocliente.getNombre());
+            System.out.println("El Cliente "+cliente.getNombre() + " registró exitosamente"+" el curso "+productocliente.getNombre());
         } else {
             System.out.println("El plan del Cliente " + cliente.getNombre() + " no cubre el curso "+curso.getNombre());
         }
@@ -96,19 +87,28 @@ public class Clatzy {
             System.out.println("El cliente "+ cliente.getNombre()+" ya había registrado el curso "+curso.getNombre());
         }
     }
-    public void comprarCurso(Cliente cliente, Curso curso, LocalDate date,int pago){       
+    public void comprarCurso(Cliente cliente, Curso curso, LocalDate date,int pago){ 
+        if (cliente.planCubreCurso(curso)) {
+            System.out.println("El curso está incluido en el plan del cliente "+cliente.getNombre()+", por lo tanto no debe pagar");
+            ProductoCliente producto = new ProductoCliente(false, 0, cliente, curso,curso.getId(),curso.getNombre(),date,null,curso.getEstadoActivo(),0);
+            cliente.addProducto(producto);
+        }else{
         if(cliente.noTieneCurso(curso)){
-            ProductoCliente producto = new ProductoCliente(false, 0, cliente, curso,curso.getId(),curso.getNombre(),date,null,curso.getEstadoActivo(),pago);
+            
         if(pago<curso.getValor()|pago>curso.getValor()){
             System.out.println("El cliente "+ cliente.getNombre()+" no pago el valor correcto por el curso "+curso.getNombre());
-        }else{           
+        }else{    
+            ProductoCliente producto = new ProductoCliente(false, 0, cliente, curso,curso.getId(),curso.getNombre(),date,null,curso.getEstadoActivo(),pago);
             cliente.addProducto(producto);
-            System.out.println("Cliente "+cliente.getNombre() + " compró exitosamente"+" el curso "+curso.getNombre());
+            System.out.println("El Cliente "+cliente.getNombre() + " compró exitosamente"+" el curso "+curso.getNombre());
         }
     }else{
-            System.out.println("El cliente "+ cliente.getNombre()+" ya había registrado el curso "+curso.getNombre());
+            System.out.println("El cliente "+ cliente.getNombre()+" ya había comprado el curso "+curso.getNombre());
         }
     }
+    }
+    
+    
     public void addCliente(String nombre, String cedula, String telefono, String email) {
         clientes.add(new Cliente(nombre, cedula, telefono, email));
     }

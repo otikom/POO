@@ -76,7 +76,7 @@ public class Main {
         clatzy.comprarCurso(clatzy.getCliente(0), clatzy.getCurso(3), date); // Debe fallar pues el cliente ya tiene el curso
 
         // Dado que el usuario tiene plan y este incluye el curso, se debe comprar sin colocar costo y mostrar mensaje de informacion
-        /*clatzy.comprarCurso(clatzy.getCliente(0), clatzy.getCurso(2), date, 100_000);
+        clatzy.comprarCurso(clatzy.getCliente(0), clatzy.getCurso(2), date, 100_000);
         clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(5), date, 150_000); // Como su plan no cubre ese curso, puede comprar la clase
         clatzy.comprarCurso(clatzy.getCliente(2), clatzy.getCurso(1), date, 100_000);
         clatzy.comprarCurso(clatzy.getCliente(3), clatzy.getCurso(1), date, 100_000);
@@ -86,7 +86,7 @@ public class Main {
         clatzy.comprarCurso(clatzy.getCliente(4), clatzy.getCurso(6), date, 150_000);
         clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(2), date);
         clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(4), date, 150_000);
-        clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(6), date, 150_000);*/
+        clatzy.comprarCurso(clatzy.getCliente(1), clatzy.getCurso(6), date, 150_000);
 
         System.out.println("\n----------------------------------------");
         //System.out.println("El cliente que mas ha pagado en efectivo por cursos es " + clatzy.getClienteMayorIngreso());

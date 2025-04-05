@@ -15,24 +15,27 @@ import java.util.ArrayList;
  *
  * @author Alexander Sanguino
  */
-public class Cliente extends Persona{
+public class Cliente extends Persona {
+
     private ArrayList<PlanCliente> planes;
     private ArrayList<ProductoCliente> productos;
 
     public Cliente(String nombre, String cedula, String telefono, String email) {
-        super(nombre,cedula,telefono,email);
+        super(nombre, cedula, telefono, email);
         this.planes = new ArrayList<>();
         this.productos = new ArrayList<>();
     }
-    public boolean addProducto(ProductoCliente producto){
-        if(!productos.contains(producto)){
+
+    public boolean addProducto(ProductoCliente producto) {
+        if (!productos.contains(producto)) {
             productos.add(producto);
             return true;
         }
         return false;
     }
-    public boolean addPlan(PlanCliente plan){
-        if(!planes.contains(plan)){
+
+    public boolean addPlan(PlanCliente plan) {
+        if (!planes.contains(plan)) {
             planes.add(plan);
             return true;
         }
@@ -42,6 +45,7 @@ public class Cliente extends Persona{
     public ArrayList<PlanCliente> getPlanes() {
         return planes;
     }
+
     public PlanCliente getPlan(int index) {
         return planes.get(index);
     }
@@ -49,16 +53,29 @@ public class Cliente extends Persona{
     public ArrayList<ProductoCliente> getProductos() {
         return productos;
     }
-    public boolean noTieneCurso(Curso curso){
-        for(ProductoCliente producto:productos){
-            if(producto.getId()==curso.getId()){
+
+    public boolean noTieneCurso(Curso curso) {
+        for (ProductoCliente producto : productos) {
+            if (producto.getId() == curso.getId()) {
                 return false;
             }
         }
         return true;
     }
+
+    public boolean planCubreCurso(Curso curso) {
+        for (PlanCliente plan : planes) {
+            if (plan.getEstadoActivo()) {
+                if (plan.getPlan().getValorMaximoCurso() >= curso.getValor()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
-        public String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 

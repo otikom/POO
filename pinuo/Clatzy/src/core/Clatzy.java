@@ -132,5 +132,21 @@ public class Clatzy {
     public void addCliente(String nombre, String cedula, String telefono, String email) {
         clientes.add(new Cliente(nombre, cedula, telefono, email));
     }
-
+    public void listAll(){
+        System.out.println("Lista de clientes con sus compras:");
+        System.out.println("----------------------------------------");
+        for(Cliente cliente:clientes){
+            System.out.println(cliente.getNombre());
+            System.out.println("Planes:");
+            for(PlanCliente plan:cliente.getPlanes()){
+                System.out.println(plan.getNombre()+" "+plan.getFechainicio()+" "+plan.getValor()+" "+plan.getEstadoActivo());
+            }
+            System.out.println(" ");
+            System.out.println("Cursos:");
+            for(ProductoCliente curso:cliente.getProductos()){
+                System.out.println(curso.getNombre()+" "+curso.getFechainicio()+" "+curso.getValor()+" "+curso.getEstadoActivo());
+            }
+            System.out.println("----------------------------------------");
+        }
+    }
 }

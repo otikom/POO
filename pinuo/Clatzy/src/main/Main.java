@@ -93,7 +93,7 @@ public class Main {
         System.out.println("----------------------------------------\n");
 
         System.out.println("------------- BONIFICACION -------------");
-        //clatzy.listAll();
+        clatzy.listAll();
     }
     
 }
